@@ -22,7 +22,6 @@
     ],
     "mac": {
       "target": "dmg",
-      "icon": "assets/favicon.png",
       "category": "public.app-category.entertainment"
     },
     "dmg": {
