@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "main.js",
   "description": "A cute virtual encouraging app",
-  "author": "Your Name",
+  "author": "An Nguyen",
   "scripts": {
     "start": "electron .",
     "build-mac": "electron-builder --mac",
