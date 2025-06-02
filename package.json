@@ -1,0 +1,44 @@
+{
+  "name": "linhchingoc-app",
+  "version": "1.0.0",
+  "main": "main.js",
+  "description": "A cute virtual encouraging app",
+  "author": "Your Name",
+  "scripts": {
+    "start": "electron .",
+    "build-mac": "electron-builder --mac",
+    "build-win": "electron-builder --win"
+  },
+  "build": {
+    "appId": "com.linhchi.app",
+    "productName": "linhchingoc",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/**/*",
+      "!dist/**/*"
+    ],
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/favicon.png",
+      "category": "public.app-category.entertainment"
+    },
+    "dmg": {
+      "title": "Install Linh Chi ngoc nghech",
+      "window": {
+        "width": 600,
+        "height": 400
+      }
+    },
+    "win": {
+      "target": "portable",
+      "icon": "assets/favicon.png"
+    }
+  },
+  "devDependencies": {
+    "electron": "^25.9.8",
+    "electron-builder": "^24.13.3"
+  }
+}

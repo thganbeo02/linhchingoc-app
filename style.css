@@ -1,0 +1,198 @@
+/* Customization Variables */
+:root {
+  /* Colors */
+  --color-page-background: #50afc9;
+  --color-main-container-background: #ff5b70;
+  --color-inner-container-background: #fff7f4;
+  --color-border: #9e0e2b;
+  --color-button-background: #fff;
+  --color-heading-text: #fff;
+  --color-button-text: #9e0e2b;
+  --color-message-text: #9e0e2b;
+
+  /* Images */
+  --image-path-background: url("assets/main-bg.png");
+  --image-path-content: url("assets/image-content/image-1.png");
+
+  /* Fonts */
+  --font-family-main: "Coming Soon", sans-serif;
+  --font-size-large: 2.25rem;
+  --font-size-medium: 1.75rem;
+  --font-size-small: 1.25rem;
+
+  /* Border Radius */
+  --border-radius: 0.31269rem;
+
+  /* Border Width */
+  --border-width-main: 3px;
+  --border-width-inner: 3.413px;
+
+  /* Spacing */
+  --padding-container: 0.62538rem;
+  --gap-icons: 0.375rem;
+  --gap-button: 0.58369rem;
+}
+
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  background-size: 100% auto; /* Desktop view */
+}
+
+h1 {
+  color: var(--color-heading-text);
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-large);
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+}
+
+/* Container styles */
+.container {
+  position: relative;
+  width: 500px;
+  aspect-ratio: 500 / 400;
+  border: var(--border-width-main) solid var(--color-border);
+  border-radius: var(--border-radius);
+  background: var(--color-main-container-background);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  padding: var(--padding-container);
+}
+
+/* Inner container */
+.inner-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 480 / 320;
+  border: var(--border-width-inner) solid var(--color-border);
+  border-radius: var(--border-radius);
+  background: var(--color-inner-container-background);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Header */
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 12%;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-app-region: drag; /* ✅ Makes the header draggable */
+  cursor: move;
+}
+
+/* Shrink Close Icons */
+.shrink-close-icons {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-icons);
+  -webkit-app-region: no-drag;
+}
+
+/* Icons */
+.shrink-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  border-radius: 2px;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Image Content */
+.image-content {
+  width: 250px;
+  height: 250px;
+  background: var(--image-path-content) no-repeat center;
+  background-size: contain;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+  flex-shrink: 0;
+}
+
+/* Main Button */
+#main-button {
+  width: 150px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: var(--border-width-inner) solid var(--color-border);
+  border-radius: var(--border-radius);
+  background: var(--color-button-background);
+  color: var(--color-button-text);
+  text-align: center;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-small);
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+  flex-shrink: 0;
+}
+
+#main-button:hover {
+  transform: scale(1.05);
+}
+
+.dynamic-text {
+  text-align: center;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-small);
+  color: var(--color-message-text);
+  font-weight: 400;
+  line-height: 1.4;
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  transition: opacity 0.3s ease;
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+  body {
+    background-size: cover;
+    background-position: bottom center;
+  }
+
+  .container {
+    margin: 1rem;
+  }
+
+  h1 {
+    font-size: calc(var(--font-size-large) - 0.25rem);
+  }
+}
