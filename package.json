@@ -20,6 +20,7 @@
       "!node_modules/**/*",
       "!dist/**/*"
     ],
+    "publish": null,
     "mac": {
       "target": "dmg",
       "category": "public.app-category.entertainment"
